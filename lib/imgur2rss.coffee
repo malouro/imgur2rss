@@ -33,7 +33,7 @@ exports.album2rss = (clientId, albumId, cb) ->
       ttl: 60 * 12
     )
 
-    for image in body.data.images.slice 0, 10
+    for image in body.data.images
       feed.item
         title: image.title ? image.id
         url: "http://imgur.com/#{ image.id }"
